@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.fishmaple</groupId>
+  <artifactId>sshexec</artifactId>
+  <version>1.0.0</version>
+  <packaging>maven-plugin</packaging>
+
+  <name>sshexec</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+		<groupId>org.apache.maven</groupId>
+		<artifactId>maven-plugin-api</artifactId>
+		<version>3.8.5</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>com.jcraft</groupId>
+	  <artifactId>jsch</artifactId>
+	  <version>0.1.55</version>
+	</dependency>
+  </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.4</version>
+                <executions>
+                    <execution>
+                        <id>default-addPluginArtifactMetadata</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>addPluginArtifactMetadata</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-descriptor</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+  
+</project>
